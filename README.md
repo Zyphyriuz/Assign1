@@ -32,5 +32,5 @@ node app.js
 It will return values or feedback for each functions. You can tweak the values slightly if you wish, but it may return errors if you search for a specific product ID that does not exist, as an example. This is a simple node module after all.
 
 # References
-- https://stackoverflow.com/questions/5767325/how-can-i-remove-a-specific-item-from-an-array-in-javascript
+- Link for the targetted deletion in array for this module: https://stackoverflow.com/questions/5767325/how-can-i-remove-a-specific-item-from-an-array-in-javascript
 - Lazada website that this module is based on: https://www.lazada.sg/
