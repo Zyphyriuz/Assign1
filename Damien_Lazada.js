@@ -37,62 +37,81 @@ const product = [
 ];
 
 // functions placed here
-module.exports = {
-
-    // Adding Product
-    addProduct: function (product_id, title, cost, weight) {
-        const newProduct = {
-            product_id: product_id,
-            title: title,
-            cost: cost,
-            weight: weight
-        };
-        product.push(newProduct);
-        return "Product added, product ID is: " + product_id + ", the name is: " + title + "."; // states the id so you know what is made
-    },
-
-    // Updating existing Product
-    updateProduct: function (product_id, title, cost, weight) {
-        const index = product.findIndex(p => p.product_id === product_id);
-        if (index !== -1) {
-            product[index].title = title;
-            product[index].cost = cost;
-            product[index].weight = weight;
-            return "Product updated, the name is now " + title + "."; // uses title so that users know which product exactly was updated
-        }
-        else {
-            return "Double check the ID if it's correct"; // error message
-        }
-    },
-
-    // Delete Existing Product
-    deleteProduct: function (product_id) {
-        const index = product.findIndex(p => p.product_id === product_id);
-        if (index !== -1) {
-            product.splice(index, 1); // basically js's way of deleting array elements
-            return "ID number: " + product_id + " has been deleted"; // simple success message
-        }
-
-        else {
-            return "Double check the ID if it's correct"; //returns error if id does not exist
-        }
-    },
 
 
-    // Get a specific product by using product_id
-    getProductID: function (product_id) {
-        const p = product.find(p => p.product_id == product_id);
-        if (p) {
-            return `ID: ${p.product_id}, Title: ${p.title}, Cost: ${p.cost}, Weight: ${p.weight}`;
-        } else {
-            return "Product not found."; // simple error if it returns nothing
-        }
-    },
+// Adding Product
+function addProduct(product_id, title, cost, weight) {
+    const newProduct = {
+        product_id: product_id,
+        title: title,
+        cost: cost,
+        weight: weight
+    };
+    product.push(newProduct);
+    return "Product added, product ID is: " + product_id + ", the name is: " + title + "."; // states the id so you know what is made
+}
 
-    // List all product function
-    getallProducts: function () {
-        return product.map(p =>
-            `ID: ${p.product_id}, Title: ${p.title}, Cost: ${p.cost}, Weight: ${p.weight}` // format to return the results as text, similar as the search feature above
-        ).join('\n');
+// Updating existing Product
+function updateProduct(product_id, title, cost, weight) {
+    const index = product.findIndex(p => p.product_id === product_id);
+    if (index !== -1) {
+        product[index].title = title;
+        product[index].cost = cost;
+        product[index].weight = weight;
+        return "Product updated, the name is now " + title + "."; // uses title so that users know which product exactly was updated
+    }
+    else {
+        return "Double check the ID if it's correct"; // error message
     }
 }
+
+// Delete Existing Product
+function deleteProduct(product_id) {
+    const index = product.findIndex(p => p.product_id === product_id);
+    if (index !== -1) {
+        product.splice(index, 1); // basically js's way of deleting array elements
+        return "ID number: " + product_id + " has been deleted"; // simple success message
+    }
+
+    else {
+        return "Double check the ID if it's correct"; //returns error if id does not exist
+    }
+}
+
+
+// Get a specific product by using product_id
+function getProductID(product_id) {
+    const p = product.find(p => p.product_id == product_id);
+    if (p) {
+        return `ID: ${p.product_id}, Title: ${p.title}, Cost: ${p.cost}, Weight: ${p.weight}`;
+    } else {
+        return "Product not found."; // simple error if it returns nothing
+    }
+}
+
+// Get a specific product by using product title
+function getProductName(title) {
+    const p = product.find(p => p.title.toLowerCase() === title.toLowerCase());
+    if (p) {
+        return `ID: ${p.product_id}, Title: ${p.title}, Cost: ${p.cost}, Weight: ${p.weight}`;
+    } else {
+        return "Product not found.";
+    }
+}
+
+// List all product function
+function getallProducts() {
+    return product.map(p =>
+        `ID: ${p.product_id}, Title: ${p.title}, Cost: ${p.cost}, Weight: ${p.weight}` // format to return the results as text, similar as the search feature above
+    ).join('\n');
+}
+
+// Export all functions at the bottom at once
+module.exports = {
+    addProduct,
+    updateProduct,
+    deleteProduct,
+    getProductID,
+    getallProducts,
+    getProductName
+};
