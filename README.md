@@ -5,7 +5,7 @@ This node module is meant to be for the shopping platform Lazada, an e-commerce 
 # How to use
 ### Note: You will need Node JS to run this module
 ### 1. If you do not have Node JS, [install Node JS here](https://nodejs.org/en/)
-### 2. app.js is what will be used to call the functions, which is the file under the same name in the repository. Simply download the file, or else copy and paste the text content into your own app.js. app.js should look like this:
+### 2. app.js is what will be used to call the functions, which is the file under the same name in the repository. Simply download the file, or else copy and paste the text content into your own app.js. It should look like this:
 ```javascript
 // this calls lazada.js to use the functions
 const lazada = require('./lazada.js');
