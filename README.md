@@ -1,12 +1,36 @@
 # Assignment 1
 
-You will only need one file, ie, your node module, for this assignment.
+This node module is meant to be for the shopping platform Lazada, an e-commerce platform similar to stores like Amazon, Shopeee, etc. where sellers can have entire shop sites for customers to look through. In this case, the node module focuses on a single seller shop, where the functions include CRUD along with a standard function search for all database objects, basically simulating a seller managing their shop.
 
-In this readme file, describe how to use your node module. It could be similar to **app.js** from Lab2, where you call some functions in your node module and display the output. Describe how to setup your node module, if any. Describe how to call the functions, what parameters required and so on.
+# How to use
+### Note: You will need Node JS to run this module
+### 1. If you do not have Node JS, [install Node JS here](https://nodejs.org/en/)
+### 2. app.js is what will be used to call the functions, which is the file under the same name in the repository. Simply download the file, or else simply copy and paste the text content into your own app.js. It should look like this:
+```javascript
+// this calls lazada.js to use the functions
+const lazada = require('./lazada.js');
 
-You can press **Ctrl+Shift+V** in this file in Visual Studio Code to see a live preview of the readme file.
+// Add a product, will also return name for so we know the change in name later
+console.log(lazada.addProduct("202", "Mini Plush", 15, 30));
 
-For some tips in formatting text in readme file, refer to https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+// Update a product, 
+console.log(lazada.updateProduct("202", "Slightly Minier Plush", 13, 27));
+
+// Delete a product using the ID
+console.log(lazada.deleteProduct("202"));
+
+// Get a specific product using the ID too
+console.log(lazada.getProductID("198"));
+
+// List all products 
+console.log(lazada.getallProducts());
+```
+### 3. Open the terminal in this directory and run
+```
+node app.js
+```
+It will return values or feedback for each functions. You can tweak the values slightly if you wish, but it may return errors if you search for a specific product ID that does not exist, as an example. This is a simple node module after all.
 
 # References
-Provide the references that you have used to support your assignment. 
+https://stackoverflow.com/questions/5767325/how-can-i-remove-a-specific-item-from-an-array-in-javascript
+lazada website that this module is based on: https://www.lazada.sg/
