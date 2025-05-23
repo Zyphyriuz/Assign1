@@ -33,8 +33,8 @@ console.log(lazada.getallProducts());
 ```
 node app.js
 ```
-It will return values or feedback for each functions. You can tweak the values slightly if you wish, but it may return errors if you search for a specific product ID that does not exist, as an example. This is a simple node module after all.
-Another thing to note is that you would notice the Slightly Minier Plush return a "product not found" when searched. This is intended since at that point in the code, that item has already been deleted. I did include the Large Nui to simulate it actually returning the result. As mentioned, feel free to mess around with some of the values.
+- It will return values or feedback for each functions. You can tweak the values slightly if you wish, but it may return errors if you search for a specific product ID that does not exist, as an example. This is a simple node module after all.
+- Another thing to note is that you would notice the Slightly Minier Plush return a "product not found" when searched. This is intended since at that point in the code, that item has already been deleted. I did include the Large Nui to simulate it actually returning the result. As mentioned, feel free to mess around with some of the values.
 
 # References
 - Link for the targetted deletion in array for this module: https://stackoverflow.com/questions/5767325/how-can-i-remove-a-specific-item-from-an-array-in-javascript
