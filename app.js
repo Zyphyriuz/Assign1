@@ -13,5 +13,9 @@ console.log(lazada.deleteProduct("202"));
 // Get a specific product using the ID too
 console.log(lazada.getProductID("198"));
 
+// Get a specific product using the name since ID's are hard to remember
+console.log(lazada.getProductName("Slightly Minier Plush"));
+console.log(lazada.getProductName("Large Nui"));
+
 // List all products 
 console.log(lazada.getallProducts());
